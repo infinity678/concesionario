@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #cf8e6d;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">package </span><span class="s0">com</span><span class="s2">.</span><span class="s0">concesionario</span><span class="s2">;</span>
+
+<span class="s1">import </span><span class="s0">com</span><span class="s2">.</span><span class="s0">concesionario</span><span class="s2">.</span><span class="s0">model</span><span class="s2">.</span><span class="s0">Vehiculo</span><span class="s2">; </span><span class="s3">// Importa la clase Vehiculo</span>
+<span class="s1">import </span><span class="s0">com</span><span class="s2">.</span><span class="s0">concesionario</span><span class="s2">.</span><span class="s0">service</span><span class="s2">.</span><span class="s0">Concesionario</span><span class="s2">;</span>
+
+<span class="s1">public class </span><span class="s0">Main </span><span class="s2">{</span>
+    <span class="s1">public static void </span><span class="s0">main</span><span class="s2">(</span><span class="s0">String</span><span class="s2">[] </span><span class="s0">args</span><span class="s2">) {</span>
+        <span class="s3">// Crear el concesionario</span>
+        <span class="s0">Concesionario concesionario </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Concesionario</span><span class="s2">();</span>
+
+        <span class="s3">// Agregar vehículos al concesionario</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">agregarVehiculo</span><span class="s2">(</span><span class="s1">new </span><span class="s0">Vehiculo</span><span class="s2">(</span><span class="s4">&quot;A001&quot;</span><span class="s2">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s2">, </span><span class="s4">&quot;Auto&quot;</span><span class="s2">, </span><span class="s5">2020</span><span class="s2">, </span><span class="s5">15000</span><span class="s2">));</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">agregarVehiculo</span><span class="s2">(</span><span class="s1">new </span><span class="s0">Vehiculo</span><span class="s2">(</span><span class="s4">&quot;C002&quot;</span><span class="s2">, </span><span class="s4">&quot;Ford&quot;</span><span class="s2">, </span><span class="s4">&quot;Camioneta&quot;</span><span class="s2">, </span><span class="s5">2019</span><span class="s2">, </span><span class="s5">30000</span><span class="s2">));</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">agregarVehiculo</span><span class="s2">(</span><span class="s1">new </span><span class="s0">Vehiculo</span><span class="s2">(</span><span class="s4">&quot;M003&quot;</span><span class="s2">, </span><span class="s4">&quot;Honda&quot;</span><span class="s2">, </span><span class="s4">&quot;Motocicleta&quot;</span><span class="s2">, </span><span class="s5">2021</span><span class="s2">, </span><span class="s5">5000</span><span class="s2">));</span>
+
+        <span class="s3">// Listar vehículos disponibles</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;Vehículos disponibles:&quot;</span><span class="s2">);</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">listarVehiculos</span><span class="s2">();</span>
+
+        <span class="s3">// Realizar una venta</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">venderVehiculo</span><span class="s2">(</span><span class="s4">&quot;A001&quot;</span><span class="s2">, </span><span class="s5">20000</span><span class="s2">, </span><span class="s4">&quot;Pérez&quot;</span><span class="s2">, </span><span class="s4">&quot;Juan&quot;</span><span class="s2">, </span><span class="s4">&quot;12345678&quot;</span><span class="s2">);</span>
+
+        <span class="s3">// Listar ventas realizadas</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;</span><span class="s1">\n</span><span class="s4">Ventas realizadas:&quot;</span><span class="s2">);</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">listarVentas</span><span class="s2">();</span>
+
+        <span class="s3">// Listar vehículos disponibles después de la venta</span>
+        <span class="s0">System</span><span class="s2">.</span><span class="s0">out</span><span class="s2">.</span><span class="s0">println</span><span class="s2">(</span><span class="s4">&quot;</span><span class="s1">\n</span><span class="s4">Vehículos disponibles después de la venta:&quot;</span><span class="s2">);</span>
+        <span class="s0">concesionario</span><span class="s2">.</span><span class="s0">listarVehiculos</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
